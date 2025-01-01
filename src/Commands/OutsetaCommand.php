@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace RefBytes\Outseta\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class OutsetaCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-outseta';
 
     public $description = 'My command';
 

@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "refbytes/laravel-outseta",
+    "description": "Integrate Outseta registration, login, and internal user creation with Laravel.",
     "keywords": [
-        ":vendor_name",
+        "RefBytes",
         "laravel",
-        ":package_slug"
+        "laravel-outseta"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/refbytes/laravel-outseta",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Jon Fackrell",
+            "email": "jon.fackrell@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "RefBytes\\Outseta\\": "src/",
+            "RefBytes\\Outseta\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "RefBytes\\Outseta\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -63,10 +63,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "RefBytes\\Outseta\\OutsetaServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "Outseta": "RefBytes\\Outseta\\Facades\\Outseta"
             }
         }
     },
