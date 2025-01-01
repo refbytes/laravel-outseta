@@ -2,9 +2,9 @@
 
 namespace RefBytes\Outseta;
 
+use RefBytes\Outseta\Commands\OutsetaCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use RefBytes\Outseta\Commands\OutsetaCommand;
 
 class OutsetaServiceProvider extends PackageServiceProvider
 {
