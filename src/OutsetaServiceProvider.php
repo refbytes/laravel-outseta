@@ -2,7 +2,10 @@
 
 namespace RefBytes\Outseta;
 
-use RefBytes\Outseta\Commands\OutsetaCommand;
+use RefBytes\Outseta\Commands\OutsetaPlanFamiliesCommand;
+use RefBytes\Outseta\Commands\OutsetaPlansCommand;
+use RefBytes\Outseta\View\Components\AppLayout;
+use RefBytes\Outseta\View\Components\GuestLayout;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -19,7 +22,19 @@ class OutsetaServiceProvider extends PackageServiceProvider
             ->name('laravel-outseta')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel_outseta_table')
-            ->hasCommand(OutsetaCommand::class);
+            ->hasRoutes(['auth', 'web', 'webhooks'])
+            ->hasMigration('create_accounts_table')
+            ->hasCommands([
+                OutsetaPlanFamiliesCommand::class,
+                OutsetaPlansCommand::class,
+            ]);
+
+        app('router')->aliasMiddleware('subscribed', \RefBytes\Outseta\Http\Middleware\SubscribedMiddleware::class);
+
+        if (app()->environment('testing')) {
+            $package->hasViewComponent('', GuestLayout::class);
+            $package->hasViewComponent('', AppLayout::class);
+        }
+
     }
 }
