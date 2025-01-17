@@ -27,14 +27,14 @@ jobs:
             pest: ^3.0
             pest-plugin-arch: ^3.0
             pest-plugin-laravel: ^3.0
-            phpunit: ^10.0
+            phpunit: ^11.0
           - laravel: 10.*
             testbench: 8.*
             carbon: ^2.63
             pest: ^2.0
             pest-plugin-arch: ^2.0
             pest-plugin-laravel: ^2.0
-            phpunit: ^9.0
+            phpunit: ^10.0
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
