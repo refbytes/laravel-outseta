@@ -29,7 +29,7 @@ class EventController extends BaseWebhookController
             'AccountSubscriptionAddOnsChanged' => AccountSubscriptionAddOnsChangedEvent::dispatch($request->all()),
             'PersonCreated' => PersonCreatedEvent::dispatch($request->all()),
             'PersonUpdated' => PersonUpdatedEvent::dispatch($request->all()),
-            'PersonDeletedEvent' => PersonDeletedEvent::dispatch($request->all()),
+            'PersonDeleted' => PersonDeletedEvent::dispatch($request->all()),
             default => OutsetaEvent::dispatch($request->all()),
         };
 

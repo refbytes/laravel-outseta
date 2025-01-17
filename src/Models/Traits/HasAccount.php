@@ -14,9 +14,19 @@ trait HasAccount
         return $this->belongsTo(Account::class);
     }
 
+    public function plan(): bool
+    {
+        return $this->account->plan();
+    }
+
     public function onTrial(): bool
     {
         return $this->account->onTrial();
+    }
+
+    public function isDemo(): bool
+    {
+        return $this->account->is_demo;
     }
 
     public function subscribed(): bool
@@ -32,10 +42,5 @@ trait HasAccount
     public function users(): HasManyThrough
     {
         return $this->hasManyThrough(User::class, Account::class);
-    }
-
-    public function isDemo(): bool
-    {
-        return $this->account->is_demo;
     }
 }

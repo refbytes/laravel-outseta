@@ -42,6 +42,14 @@ class Account extends Model
             || ($this->account_stage === AccountStage::Trialing->value);
     }
 
+    public function plan(): Plan
+    {
+        return new Plan(
+            name: data_get($this->current_subscription, 'Plan.Name'),
+            uid: data_get($this->current_subscription, 'Plan.Uid'),
+        );
+    }
+
     public function addOns(): Collection
     {
         return collect(
