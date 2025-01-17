@@ -34,7 +34,7 @@ jobs:
             pest: ^2.0
             pest-plugin-arch: ^2.0
             pest-plugin-laravel: ^2.0
-            phpunit: ^10.0
+            phpunit: ^9.0
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
