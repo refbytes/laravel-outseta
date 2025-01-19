@@ -2,13 +2,11 @@
 
 namespace RefBytes\Outseta\Http\Controllers\Auth;
 
-use App\Models\User;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use RefBytes\Outseta\Models\Account;
 
 class LoginController
 {
@@ -19,9 +17,7 @@ class LoginController
             new Key(config('outseta.auth.public_key'), 'RS256')
         );
 
-        logger()->info($decoded);
-
-        $user = User::firstOrNew([
+        $user = config()->get('outseta.auth.user')::firstOrNew([
             'email' => $decoded['email'],
         ], [
             'name' => $decoded['given_name'].' '.$decoded['family_name'],
@@ -33,7 +29,7 @@ class LoginController
         }
 
         if (empty($user->account_id)) {
-            $user->account()->associate(Account::firstOrCreate([
+            $user->account()->associate(config()->get('outseta.auth.account')::firstOrCreate([
                 'uid' => $decoded['outseta:accountUid'],
             ]));
             $user->save();

@@ -12,4 +12,10 @@ class User extends BaseUser
     use HasAccount;
     use HasFactory;
     use Notifiable;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
 }

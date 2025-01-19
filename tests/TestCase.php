@@ -29,6 +29,7 @@ class TestCase extends Orchestra
     public function getEnvironmentSetUp($app)
     {
         config()->set('database.default', 'testing');
+        config()->set('outseta.auth.user', \RefBytes\Outseta\Tests\TestSupport\Models\User::class);
 
         Schema::dropAllTables();
 

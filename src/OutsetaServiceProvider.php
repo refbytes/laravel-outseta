@@ -32,6 +32,7 @@ class OutsetaServiceProvider extends PackageServiceProvider
         app('router')->aliasMiddleware('outseta', \RefBytes\Outseta\Http\Middleware\SubscribedMiddleware::class);
 
         if (app()->environment('testing')) {
+            $package->hasRoute('testing');
             $package->hasViewComponent('', GuestLayout::class);
             $package->hasViewComponent('', AppLayout::class);
         }

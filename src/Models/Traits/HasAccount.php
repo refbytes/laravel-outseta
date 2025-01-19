@@ -2,16 +2,14 @@
 
 namespace RefBytes\Outseta\Models\Traits;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use RefBytes\Outseta\Models\Account;
 
 trait HasAccount
 {
     public function account(): BelongsTo
     {
-        return $this->belongsTo(Account::class);
+        return $this->belongsTo(config()->get('outseta.auth.account'));
     }
 
     public function plan(): bool
@@ -41,6 +39,6 @@ trait HasAccount
 
     public function users(): HasManyThrough
     {
-        return $this->hasManyThrough(User::class, Account::class);
+        return $this->hasManyThrough(config()->get('outseta.auth.user'), config()->get('outseta.auth.account'));
     }
 }

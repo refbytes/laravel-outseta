@@ -2,14 +2,17 @@
 
 namespace RefBytes\Outseta\Models;
 
-use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
+use RefBytes\Outseta\Database\Factories\AccountFactory;
 use RefBytes\Outseta\Enums\AccountStage;
 
 class Account extends Model
 {
+    use HasFactory;
+
     protected $guarded = ['id'];
 
     protected function casts(): array
@@ -23,7 +26,7 @@ class Account extends Model
 
     public function users(): HasMany
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(config()->get('outseta.auth.user'));
     }
 
     public function onTrial(): bool
@@ -61,5 +64,10 @@ class Account extends Model
                 min_quantity: data_get($addOn, 'AddOn.MinimumQuantity'),
             );
         });
+    }
+
+    protected static function newFactory()
+    {
+        return AccountFactory::new();
     }
 }

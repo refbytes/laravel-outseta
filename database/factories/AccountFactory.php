@@ -4,11 +4,11 @@ namespace RefBytes\Outseta\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use RefBytes\Outseta\Enums\AccountStage;
-use RefBytes\Outseta\Tests\TestSupport\Models\User;
+use RefBytes\Outseta\Models\Account;
 
 class AccountFactory extends Factory
 {
-    protected $model = User::class;
+    protected $model = Account::class;
 
     public function definition()
     {

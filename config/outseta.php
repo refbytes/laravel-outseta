@@ -15,6 +15,10 @@ return [
 
     'auth' => [
 
+        'user' => \App\Models\User::class,
+
+        'account' => \RefBytes\Outseta\Models\Account::class,
+
         'public_key' => env('OUTSETA_PUBLIC_KEY'),
 
         'redirect_after_login' => env('OUTSETA_REDIRECT_AFTER_LOGIN', '/dashboard'),
