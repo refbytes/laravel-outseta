@@ -68,17 +68,7 @@ it('can trigger all events from a webhook request', function () {
         'a' => 1,
     ];
 
-    $events = [
-        'AccountCreated' => \RefBytes\Outseta\Events\AccountCreatedEvent::class,
-        'AccountUpdated' => \RefBytes\Outseta\Events\AccountUpdatedEvent::class,
-        'AccountDeleted' => \RefBytes\Outseta\Events\AccountDeletedEvent::class,
-        'AccountPaidSubscriptionCreated' => \RefBytes\Outseta\Events\AccountPaidSubscriptionCreatedEvent::class,
-        'AccountSubscriptionAddOnsChanged' => \RefBytes\Outseta\Events\AccountSubscriptionAddOnsChangedEvent::class,
-        'AccountSubscriptionPlanUpdated' => \RefBytes\Outseta\Events\AccountSubscriptionPlanUpdatedEvent::class,
-        'PersonCreated' => \RefBytes\Outseta\Events\PersonCreatedEvent::class,
-        'PersonUpdated' => \RefBytes\Outseta\Events\PersonUpdatedEvent::class,
-        'PersonDeleted' => \RefBytes\Outseta\Events\PersonDeletedEvent::class,
-    ];
+    $events = config()->get('outseta.webhooks.events');
 
     foreach ($events as $name => $event) {
         $this->postJson("/webhooks/event?event=$name", $payload, getHeaders($payload))

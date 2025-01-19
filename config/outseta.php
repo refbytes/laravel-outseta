@@ -31,6 +31,18 @@ return [
 
         'signature_key' => env('OUTSETA_WEBHOOK_KEY'),
 
+        'events' => [
+            'AccountCreated' => \RefBytes\Outseta\Events\AccountCreatedEvent::class,
+            'AccountUpdated' => \RefBytes\Outseta\Events\AccountUpdatedEvent::class,
+            'AccountDeleted' => \RefBytes\Outseta\Events\AccountDeletedEvent::class,
+            'AccountPaidSubscriptionCreated' => \RefBytes\Outseta\Events\AccountPaidSubscriptionCreatedEvent::class,
+            'AccountSubscriptionAddOnsChanged' => \RefBytes\Outseta\Events\AccountSubscriptionAddOnsChangedEvent::class,
+            'AccountSubscriptionPlanUpdated' => \RefBytes\Outseta\Events\AccountSubscriptionPlanUpdatedEvent::class,
+            'PersonCreated' => \RefBytes\Outseta\Events\PersonCreatedEvent::class,
+            'PersonUpdated' => \RefBytes\Outseta\Events\PersonUpdatedEvent::class,
+            'PersonDeleted' => \RefBytes\Outseta\Events\PersonDeletedEvent::class,
+        ],
+
     ],
 
     'support' => [

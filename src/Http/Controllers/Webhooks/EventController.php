@@ -3,16 +3,7 @@
 namespace RefBytes\Outseta\Http\Controllers\Webhooks;
 
 use Illuminate\Http\Request;
-use RefBytes\Outseta\Events\AccountCreatedEvent;
-use RefBytes\Outseta\Events\AccountDeletedEvent;
-use RefBytes\Outseta\Events\AccountPaidSubscriptionCreatedEvent;
-use RefBytes\Outseta\Events\AccountSubscriptionAddOnsChangedEvent;
-use RefBytes\Outseta\Events\AccountSubscriptionPlanUpdatedEvent;
-use RefBytes\Outseta\Events\AccountUpdatedEvent;
 use RefBytes\Outseta\Events\OutsetaEvent;
-use RefBytes\Outseta\Events\PersonCreatedEvent;
-use RefBytes\Outseta\Events\PersonDeletedEvent;
-use RefBytes\Outseta\Events\PersonUpdatedEvent;
 
 class EventController extends BaseWebhookController
 {
@@ -35,18 +26,7 @@ class EventController extends BaseWebhookController
             $account->update($newAccountInfo);
         }
 
-        match ($request->get('event')) {
-            'AccountCreated' => AccountCreatedEvent::dispatch($data),
-            'AccountUpdated' => AccountUpdatedEvent::dispatch($data),
-            'AccountDeleted' => AccountDeletedEvent::dispatch($data),
-            'AccountPaidSubscriptionCreated' => AccountPaidSubscriptionCreatedEvent::dispatch($data),
-            'AccountSubscriptionPlanUpdated' => AccountSubscriptionPlanUpdatedEvent::dispatch($data),
-            'AccountSubscriptionAddOnsChanged' => AccountSubscriptionAddOnsChangedEvent::dispatch($data),
-            'PersonCreated' => PersonCreatedEvent::dispatch($data),
-            'PersonUpdated' => PersonUpdatedEvent::dispatch($data),
-            'PersonDeleted' => PersonDeletedEvent::dispatch($data),
-            default => OutsetaEvent::dispatch($data),
-        };
+        (config()->get('outseta.webhooks.events')[$request->get('event')] ?? OutsetaEvent::class)::dispatch($data);
 
         return response()->json(['message' => 'Webhook received.'], 200);
     }
