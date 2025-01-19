@@ -3,7 +3,7 @@
 namespace RefBytes\Outseta\Models\Traits;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait HasAccount
 {
@@ -37,8 +37,12 @@ trait HasAccount
         return $this->account->onTrialOrSubscribed();
     }
 
-    public function users(): HasManyThrough
+    public function users(): HasMany
     {
-        return $this->hasManyThrough(config()->get('outseta.auth.user'), config()->get('outseta.auth.account'));
+        return $this->hasMany(
+            related: config()->get('outseta.auth.user'),
+            foreignKey: 'account_id',
+            localKey: 'account_id',
+        );
     }
 }

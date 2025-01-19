@@ -7,7 +7,7 @@ beforeEach(function () {
 
     Event::fake();
 });
-it('can create and login new users', function () {
+it('can create and login a new user', function () {
     config()->set('outseta.auth.user', \RefBytes\Outseta\Tests\TestSupport\Models\User::class);
     config()->set('outseta.auth.public_key', file_get_contents(__DIR__.'/TestSupport/public.key'));
 
