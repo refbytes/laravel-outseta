@@ -38,6 +38,31 @@ it('can process a webhook request', function () {
     Event::assertDispatched(OutsetaEvent::class);
 });
 
+it('can update account info in a webhook request', function () {
+    $account = \RefBytes\Outseta\Models\Account::factory()
+        ->trialing()
+        ->create();
+
+    $payload = [
+        'Uid' => $account->uid,
+        'Name' => $name = fake()->company,
+        'AccountStage' => $stage = \RefBytes\Outseta\Enums\AccountStage::Subscribing->value,
+        'IsDemo' => $isDemo = false,
+        'CurrentSubscription' => $currentSubscription = [],
+        'Subscriptions' => $subscriptions = [],
+    ];
+
+    $this->postJson('/webhooks/event', $payload, getHeaders($payload))
+        ->assertSuccessful();
+
+    $account = \RefBytes\Outseta\Models\Account::first();
+
+    assert($account->name === $name);
+    assert($account->account_stage === \RefBytes\Outseta\Enums\AccountStage::Subscribing->value);
+
+    Event::assertDispatched(OutsetaEvent::class);
+});
+
 it('can trigger all events from a webhook request', function () {
     $payload = [
         'a' => 1,
