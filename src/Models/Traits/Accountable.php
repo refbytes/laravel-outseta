@@ -8,6 +8,10 @@ use RefBytes\Outseta\Enums\AccountStage;
 use RefBytes\Outseta\Models\Addon;
 use RefBytes\Outseta\Models\Plan;
 
+/**
+ * @property int $account_stage
+ * @property array $current_subscription
+ */
 trait Accountable
 {
     protected function casts(): array
