@@ -44,7 +44,6 @@ OUTSETA_REDIRECT_IF_NOT_SUBSCRIBED= # default is /
 OUTSETA_WEBHOOK_KEY= 
 ```
 
-```bash
 If you choose to, you can publish the config file with:
 
 ```bash
