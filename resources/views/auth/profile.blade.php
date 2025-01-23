@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-dynamic-component :component="config('outseta.layouts.app')">
     <div id="profile-embed"></div>
     <script>
         var o_profile_options = {
@@ -15,4 +15,4 @@
     <script src="https://cdn.outseta.com/outseta.min.js"
             data-options="o_profile_options">
     </script>
-</x-app-layout>
+</x-dynamic-component>

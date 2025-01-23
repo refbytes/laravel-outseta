@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-dynamic-component :component="config('outseta.layouts.guest')">
     <div id="login-embed"></div>
     <script>
         var o_login_options = {
@@ -16,4 +16,4 @@
     <script src="https://cdn.outseta.com/outseta.min.js"
             data-options="o_login_options">
     </script>
-</x-guest-layout>
+</x-dynamic-component>

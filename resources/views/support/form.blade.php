@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-dynamic-component :component="config('outseta.layouts.app')">
 <div id="support-form"></div>
     <script>
         var o_options = {
@@ -13,4 +13,4 @@
     <script src="https://cdn.outseta.com/outseta.min.js"
             data-options="o_options">
     </script>
-</x-app-layout>
+</x-dynamic-component>

@@ -3,6 +3,14 @@
 // config for RefBytes/Outseta
 return [
 
+    'layouts' => [
+
+        'guest' => 'guest-layout',
+
+        'app' => 'app-layout',
+
+    ],
+
     'api' => [
 
         'subdomain' => env('OUTSETA_SUBDOMAIN'),
@@ -15,9 +23,9 @@ return [
 
     'auth' => [
 
-        'user' => \App\Models\User::class,
+        'user' => env('AUTH_MODEL', App\Models\User::class),
 
-        'account' => \RefBytes\Outseta\Models\Account::class,
+        'account' => env('OUTSETA_ACCOUNT_MODEL', \RefBytes\Outseta\Models\Account::class),
 
         'public_key' => env('OUTSETA_PUBLIC_KEY'),
 
