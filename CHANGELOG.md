@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v0.4.1 - 2025-01-23
+
+* Renamed Profile route to match Breeze convention.
+
 ## v0.4.0 - 2025-01-23
 
 + A default App and Guest Layouts if neither exist in the app. This is to accelerate using the Outseta integration, but most developers will want to create a local customized App and Guest Layout.
