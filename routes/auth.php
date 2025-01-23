@@ -11,7 +11,7 @@ Route::middleware('web')
             ->name('login');
         Route::view('profile', 'outseta::auth.profile')
             ->middleware(['auth'])
-            ->name('profile');
+            ->name('profile.edit');
 
         Route::get('/auth/callback', \RefBytes\Outseta\Http\Controllers\Auth\LoginController::class)
             ->name('auth.callback');
