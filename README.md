@@ -11,10 +11,10 @@ This [Laravel](https://laravel.com) package integrates [Outseta](http://www.outs
 > If you don't already have an account, you can register for a an [Outseta account](http://www.outseta.com/?via=refbytes). This is an affiliate link that helps me keep the lights on.
 
 ## Usage
-In order to use this package, you'll need to have an [Outseta account](http://www.outseta.com/?via=refbytes). Once you account is created, you can follow these steps to integrate with your Laravel app.
+In order to use this package, you'll need to have an [Outseta account](http://www.outseta.com/?via=refbytes). Once you account is created, you can follow these steps to get started. A full integration guide is provided in the [wiki](https://github.com/refbytes/laravel-outseta/wiki).
 
 ### Outseta Account
-Copy the subdomain portion of your Outseta URL to `OUTSETA_SUBDOMAIN` in your .env file. The subdmain can be copied from your browser's address bar. It can also be viewed and changed by going to Settings -> General -> Outseta URL.
+Copy the subdomain portion of your Outseta URL to `OUTSETA_SUBDOMAIN` in your .env file. The subdomain can be copied from your browser's address bar. It can also be viewed and changed by going to Settings -> General -> Outseta URL.
 
 
 ## Installation
@@ -25,7 +25,7 @@ You can install the package via composer:
 composer require refbytes/laravel-outseta
 ```
 
-The included migrations create an accounts table and adds an account_id column to your users table.
+The included migrations create an accounts table and adds an account_id column to your users table. If you need to customize the models used by this package you can specify them in the config file using `.env` keys. 
 
 You can publish and run the migrations with:
 
@@ -34,14 +34,15 @@ php artisan vendor:publish --tag="outseta-migrations"
 php artisan migrate
 ```
 
-There are several configuration options that need to be set up in your `.env` file:
+There are a few configuration options that are required to be set up in your `.env` file and several optional settings depending on your app:
 
 ```dotenv
 OUTSETA_SUBDOMAIN=
 OUTSETA_PUBLIC_KEY=
+OUTSETA_WEBHOOK_KEY= 
+
 OUTSETA_REDIRECT_AFTER_LOGIN= # default is /dashboard
 OUTSETA_REDIRECT_IF_NOT_SUBSCRIBED= # default is /
-OUTSETA_WEBHOOK_KEY= 
 ```
 
 If you choose to, you can publish the config file with:
