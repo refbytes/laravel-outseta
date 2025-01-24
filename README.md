@@ -5,13 +5,13 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/refbytes/laravel-outseta/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/refbytes/laravel-outseta/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/refbytes/laravel-outseta.svg?style=flat-square)](https://packagist.org/packages/refbytes/laravel-outseta)
 
-This [Laravel](https://laravel.com) package integrates [Outseta](http://www.outseta.com/?via=refbytes) registration, login, and internal user creation with Laravel. It also includes a webhook configuration for receiving Outseta events.
+This [Laravel](https://laravel.com) package integrates [Outseta](http://www.outseta.com/?via=laravel) registration, login, and internal user creation with Laravel. It also includes a webhook configuration for receiving Outseta events.
 
 > [!NOTE]
-> If you don't already have an account, you can register for a an [Outseta account](http://www.outseta.com/?via=refbytes). This is an affiliate link that helps me keep the lights on.
+> If you don't already have an account, you can register for a an [Outseta account](http://www.outseta.com/?via=laravel). This is an affiliate link that helps me keep the lights on.
 
 ## Usage
-In order to use this package, you'll need to have an [Outseta account](http://www.outseta.com/?via=refbytes). Once you account is created, you can follow these steps to get started. A full integration guide is provided in the [wiki](https://github.com/refbytes/laravel-outseta/wiki).
+In order to use this package, you'll need to have an [Outseta account](http://www.outseta.com/?via=laravel). Once you account is created, you can follow these steps to get started. A full integration guide is provided in the [wiki](https://github.com/refbytes/laravel-outseta/wiki).
 
 ### Outseta Account
 Copy the subdomain portion of your Outseta URL to `OUTSETA_SUBDOMAIN` in your .env file. The subdomain can be copied from your browser's address bar. It can also be viewed and changed by going to Settings -> General -> Outseta URL.
