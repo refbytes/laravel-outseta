@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v0.5.0 - 2025-01-25
+
+* Updated embed scripts and added quick start component to load script globally
+
 ## v0.4.1 - 2025-01-23
 
 * Renamed Profile route to match Breeze convention.
