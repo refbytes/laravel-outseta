@@ -34,6 +34,12 @@ php artisan vendor:publish --tag="outseta-migrations"
 php artisan migrate
 ```
 
+In order to integrate the Outseta Authentication, you need to add the Quick Start script to the header of every page. You can do this be adding the included component to the `<head>` section of your layouts.
+
+```blade
+<x-outseta-quick-start-script />
+```
+
 There are a few configuration options that are required to be set up in your `.env` file and several optional settings depending on your app:
 
 ```dotenv

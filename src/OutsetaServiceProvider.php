@@ -6,6 +6,7 @@ use RefBytes\Outseta\Commands\OutsetaPlanFamiliesCommand;
 use RefBytes\Outseta\Commands\OutsetaPlansCommand;
 use RefBytes\Outseta\View\Components\AppLayout;
 use RefBytes\Outseta\View\Components\GuestLayout;
+use RefBytes\Outseta\View\Components\QuickStartScript;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -22,6 +23,7 @@ class OutsetaServiceProvider extends PackageServiceProvider
             ->name('laravel-outseta')
             ->hasConfigFile()
             ->hasViews()
+            ->hasViewComponent('outseta', QuickStartScript::class)
             ->hasRoutes(['auth', 'web', 'webhooks'])
             ->hasMigration('create_accounts_table')
             ->hasCommands([
