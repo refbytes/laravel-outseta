@@ -7,6 +7,8 @@
 
 This [Laravel](https://laravel.com) package integrates [Outseta](http://www.outseta.com/?via=laravel) registration, login, and internal user creation with Laravel. It also includes a webhook configuration for receiving Outseta events.
 
+[![Intro to Outseta for Laravel](https://img.youtube.com/vi/el3TvMVsRR8/0.jpg)](https://www.youtube.com/watch?v=el3TvMVsRR8)
+
 > [!NOTE]
 > If you don't already have an account, you can register for a an [Outseta account](http://www.outseta.com/?via=laravel). This is an affiliate link that helps me keep the lights on.
 
