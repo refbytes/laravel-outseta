@@ -37,12 +37,11 @@ class LoginController
 
         Auth::login($user, remember: true);
 
+        $request->session()->flash('outseta_access_token', $request->get('access_token'));
+
         return $this
             ->intended(
                 default: config('outseta.auth.redirect_after_login'),
-                query: [
-                    'access_token' => $request->get('access_token'),
-                ]
             );
     }
 
