@@ -2,6 +2,13 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v0.6.0 - 2025-02-14
+
+### What's Changed
+
+- The ability to report add-on usage via a job was added.
+- You can now view plans and associated add-on names and Uids by running the outseta:plans command.
+
 ## v0.5.1 - 2025-01-27
 
 * Updated login to pass access token to quick start script rather than appending it to the URL
