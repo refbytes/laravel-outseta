@@ -59,6 +59,7 @@ trait Accountable
         )->map(function ($addOn) {
             return new Addon(
                 name: data_get($addOn, 'AddOn.Name'),
+                uid: data_get($addOn, 'Uid'),
                 quantity: data_get($addOn, 'Quantity'),
                 min_quantity: data_get($addOn, 'AddOn.MinimumQuantity'),
             );

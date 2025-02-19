@@ -6,6 +6,7 @@ class Addon
 {
     public function __construct(
         public ?string $name = null,
+        public ?string $uid = null,
         public ?int $quantity = null,
         public ?int $min_quantity = null,
     ) {}
