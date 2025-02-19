@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v0.7.0 - 2025-02-19
+
+* Added Add-on Uid to Account and updated instructions in the wiki for sending the Uid for usage-based Add-ons.
+
 ## v0.6.0 - 2025-02-14
 
 ### What's Changed
