@@ -18,7 +18,6 @@ class TrackCustomActivityJob implements ShouldQueue
         public string $title,
         public string $description,
         public string $data,
-        public int $type,
         public string $uid,
     ) {}
 
