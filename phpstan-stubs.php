@@ -2,9 +2,13 @@
 
 namespace App\Models;
 
+use RefBytes\Outseta\Models\Traits\HasAccount;
+
 /**
  * @property int $id
  * @property string $name
  * @property string $email
  */
-class User {}
+class User {
+    use HasAccount;
+}
