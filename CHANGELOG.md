@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v0.7.1 - 2025-02-25
+
+* Added the ability to track custom activities by creating a job that sends activity via the API
+
 ## v0.7.0 - 2025-02-19
 
 * Added Add-on Uid to Account and updated instructions in the wiki for sending the Uid for usage-based Add-ons.
