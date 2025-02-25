@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v0.8.0 - 2025-02-25
+
+Upgraded dependencies for Laravel 12 compatibility
+
 ## v0.7.2 - 2025-02-25
 
 * Removed unnecessary parameter in custom activity tracking job
