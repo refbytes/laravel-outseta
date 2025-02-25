@@ -9,6 +9,7 @@ use RefBytes\Outseta\Models\Traits\HasAccount;
  * @property string $name
  * @property string $email
  */
-class User {
+class User
+{
     use HasAccount;
 }
