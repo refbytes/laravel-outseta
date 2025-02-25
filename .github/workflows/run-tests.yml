@@ -22,7 +22,7 @@ jobs:
         stability: [prefer-lowest, prefer-stable]
         include:
           - laravel: 12.*
-            testbench: ^9.0.0
+            testbench: ^10.0.0
             carbon: ^3.86
             pest: 3.*
             pest-plugin-arch: 3.*
