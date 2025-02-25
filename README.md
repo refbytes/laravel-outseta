@@ -65,6 +65,7 @@ php artisan vendor:publish --tag="outseta-config"
  - [x] Subscription Checking
  - [x] Webhooks with Events
  - [x] Update Addon Usage
+ - [x] Track Custom Activity
 
 ## Testing
 
