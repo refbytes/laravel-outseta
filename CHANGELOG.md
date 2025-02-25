@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v0.7.2 - 2025-02-25
+
+* Removed unnecessary parameter in custom activity tracking job
+
 ## v0.7.1 - 2025-02-25
 
 * Added the ability to track custom activities by creating a job that sends activity via the API
