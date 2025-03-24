@@ -37,7 +37,7 @@ class LoginController
 
         Auth::login($user, remember: true);
 
-        $request->session()->flash('outseta_access_token', $request->get('access_token'));
+        session(['outseta_access_token' => $request->get('access_token')]);
 
         return $this
             ->intended(
