@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v0.8.1 - 2025-03-24
+
+Persists the access token longer than a single redirect by storing it in the session rather than flashing it.
+
+This was required to get Outseta authentication working with Filament.
+
 ## v0.8.0 - 2025-02-25
 
 Upgraded dependencies for Laravel 12 compatibility
