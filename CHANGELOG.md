@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v0.8.2 - 2025-03-26
+
++ Added events for removing and adding people to the account. This will allow for adding and removing users internally to the Laravel application
+
+* Added env variables to allow for customizing preferred layouts for the guest and app layouts.
+
 ## v0.8.1 - 2025-03-24
 
 Persists the access token longer than a single redirect by storing it in the session rather than flashing it.
