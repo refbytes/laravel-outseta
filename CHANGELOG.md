@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v0.8.3 - 2025-03-26
+
+* Altered is_demo column to be 0 by default
+* Set the name of the account temporarily until the webhook is received with the user entered name
+* Mark accounts that don't yet have the current subscription set as a trial
+* Refactored onTrialOrSubscribed to deduplicate code
+* Fixed incorrect plan() return type
+
 ## v0.8.2 - 2025-03-26
 
 + Added events for removing and adding people to the account. This will allow for adding and removing users internally to the Laravel application
