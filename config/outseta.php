@@ -5,9 +5,9 @@ return [
 
     'layouts' => [
 
-        'guest' => 'guest-layout',
+        'guest' => env('OUTSETA_GUEST_LAYOUT', 'guest-layout'),
 
-        'app' => 'app-layout',
+        'app' => env('OUTSETA_APP_LAYOUT', 'app-layout'),
 
     ],
 
@@ -43,6 +43,8 @@ return [
             'AccountCreated' => \RefBytes\Outseta\Events\AccountCreatedEvent::class,
             'AccountUpdated' => \RefBytes\Outseta\Events\AccountUpdatedEvent::class,
             'AccountDeleted' => \RefBytes\Outseta\Events\AccountDeletedEvent::class,
+            'AccountAddPerson' => \RefBytes\Outseta\Events\AccountAddPersonEvent::class,
+            'AccountRemovePerson' => \RefBytes\Outseta\Events\AccountRemovePersonEvent::class,
             'AccountPaidSubscriptionCreated' => \RefBytes\Outseta\Events\AccountPaidSubscriptionCreatedEvent::class,
             'AccountSubscriptionAddOnsChanged' => \RefBytes\Outseta\Events\AccountSubscriptionAddOnsChangedEvent::class,
             'AccountSubscriptionPlanUpdated' => \RefBytes\Outseta\Events\AccountSubscriptionPlanUpdatedEvent::class,
