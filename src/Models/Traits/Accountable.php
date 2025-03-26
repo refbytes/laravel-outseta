@@ -30,7 +30,8 @@ trait Accountable
 
     public function onTrial(): bool
     {
-        return $this->account_stage === AccountStage::Trialing->value;
+        return empty($this->current_subscription)
+            || ($this->account_stage === AccountStage::Trialing->value);
     }
 
     public function subscribed(): bool
@@ -40,8 +41,8 @@ trait Accountable
 
     public function onTrialOrSubscribed(): bool
     {
-        return ($this->account_stage === AccountStage::Subscribing->value)
-            || ($this->account_stage === AccountStage::Trialing->value);
+        return $this->onTrial()
+            || $this->subscribed();
     }
 
     public function plan(): Plan

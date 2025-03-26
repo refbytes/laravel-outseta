@@ -4,6 +4,7 @@ namespace RefBytes\Outseta\Models\Traits;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use RefBytes\Outseta\Models\Plan;
 
 trait HasAccount
 {
@@ -12,7 +13,7 @@ trait HasAccount
         return $this->belongsTo(config()->get('outseta.auth.account'));
     }
 
-    public function plan(): bool
+    public function plan(): Plan
     {
         return $this->account->plan();
     }

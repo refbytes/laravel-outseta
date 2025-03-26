@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('name')
                 ->nullable();
             $table->boolean('is_demo')
-                ->nullable();
+                ->default(0);
             $table->integer('account_stage')
                 ->nullable();
             $table->json('current_subscription')

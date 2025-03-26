@@ -31,6 +31,8 @@ class LoginController
         if (empty($user->account_id)) {
             $user->account()->associate(config()->get('outseta.auth.account')::firstOrCreate([
                 'uid' => $decoded['outseta:accountUid'],
+            ], [
+                'name' => $decoded['email'],
             ]));
             $user->save();
         }
