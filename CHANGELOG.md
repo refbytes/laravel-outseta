@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v1.0.0 - 2025-04-15
+
+No changes, just re-releasing as  v1.0.0
+
 ## v0.8.3 - 2025-03-26
 
 * Altered is_demo column to be 0 by default
