@@ -14,13 +14,13 @@ use RefBytes\Outseta\Models\Plan;
  */
 trait Accountable
 {
-    protected function casts(): array
+    public function initializeAccountable()
     {
-        return [
+        $this->mergeCasts([
             'current_subscription' => 'array',
             'subscriptions' => 'array',
             'deals' => 'array',
-        ];
+        ]);
     }
 
     public function users(): HasMany
