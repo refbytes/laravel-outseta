@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v1.0.1 - 2025-04-25
+
+- Replaced $cast property in Accountable trait with initializeAccountable method and mergeCasts()
+
 ## v1.0.0 - 2025-04-15
 
 No changes, just re-releasing as  v1.0.0
