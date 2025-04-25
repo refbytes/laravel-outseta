@@ -6,6 +6,6 @@ class Plan
 {
     public function __construct(
         public ?string $name = null,
-        public ?int $uid = null,
+        public ?string $uid = null,
     ) {}
 }
