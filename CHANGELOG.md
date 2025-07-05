@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v1.1.1 - 2025-07-05
+
+Added a logout route in case it doesn't exist
+
 ## v1.1.0 - 2025-07-05
 
 Fixes #5
