@@ -15,4 +15,9 @@ Route::middleware('web')
 
         Route::get('/auth/callback', \RefBytes\Outseta\Http\Controllers\Auth\LoginController::class)
             ->name('auth.callback');
+
+        if (! Route::has('logout')) {
+            Route::post('logout', \RefBytes\Outseta\Http\Controllers\Auth\LogoutController::class)
+                ->name('logout');
+        }
     });
