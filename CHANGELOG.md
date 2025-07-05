@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v1.1.0 - 2025-07-05
+
+Fixes #5
+
++ Added an Outseta check to get the current user. If it fails, for example the session has expired, then the users will be logged out of Laravel.
+
+* Changed the Outseta tokenStorage to cookie
+
 ## v1.0.2 - 2025-04-25
 
 - Updated Plan Id property type to be a string
