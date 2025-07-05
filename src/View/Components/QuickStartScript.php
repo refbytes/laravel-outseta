@@ -16,11 +16,23 @@ class QuickStartScript extends Component
         <script>
             var o_options = {
                 domain: '{{ config('outseta.api.subdomain') }}.outseta.com',
-                load: 'auth,customForm,emailList,leadCapture,nocode,profile,support'
+                load: 'auth,customForm,emailList,leadCapture,nocode,profile,support',
+                tokenStorage: 'cookie'
             };
             window.setOutsetaAccessToken = function() {
                 @if(session('outseta_access_token', null))
                     Outseta.setAccessToken('{{ session('outseta_access_token') }}');
+                @else
+                    Outseta.getCurrentUser()
+                        .catch(function(error) {
+                            fetch("{{ route('logout') }}", {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                },
+                            });
+                        });
                 @endif
             };
         </script>
