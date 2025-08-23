@@ -23,7 +23,8 @@ class QuickStartScript extends Component
                 @if(session('outseta_access_token', null))
                     Outseta.setAccessToken('{{ session('outseta_access_token') }}');
                 @else
-                    Outseta.getCurrentUser()
+                    Outseta.getUser()
+                        .then((profile) => {})
                         .catch(function(error) {
                             fetch("{{ route('logout') }}", {
                                 method: 'POST',

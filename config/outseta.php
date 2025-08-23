@@ -11,6 +11,14 @@ return [
 
     ],
 
+    'plan' => [
+
+        'family_uid' => env('OUTSETA_PLAN_FAMILY_UID'),
+
+        'payment_term' => env('OUTSETA_PLAN_FAMILY_UID', 'month'),
+
+    ],
+
     'api' => [
 
         'subdomain' => env('OUTSETA_SUBDOMAIN'),
