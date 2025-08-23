@@ -2,6 +2,17 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v1.2.0 - 2025-08-23
+
+Sessions Checking Updates
+
+- Updated getCurrentUser method to getUser when checking for Outseta logged in user
+
+Registration Form Updates
+
+- Added configuration options for the familyUid and payment term
+- Added linkable selected plan
+
 ## v1.1.1 - 2025-07-05
 
 Added a logout route in case it doesn't exist
