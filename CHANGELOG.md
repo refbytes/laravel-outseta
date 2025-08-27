@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v1.3.1 - 2025-08-27
+
+Added previously created migration to Service Provider to allow for publishing
+
 ## v1.3.0 - 2025-08-27
 
 Added PersonAccount information to accounts table in person_account column.
