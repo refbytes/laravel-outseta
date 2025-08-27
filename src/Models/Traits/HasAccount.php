@@ -38,6 +38,18 @@ trait HasAccount
         return $this->account->onTrialOrSubscribed();
     }
 
+    public function isPrimary(): bool
+    {
+        return in_array(
+            str($this->email)->lower(),
+            collect($this->account->person_account)
+                ->where('IsPrimary', true)
+                ->pluck('Person.Email')
+                ->map(fn ($email) => str($email)->lower())
+                ->toArray(),
+        );
+    }
+
     public function users(): HasMany
     {
         return $this->hasMany(

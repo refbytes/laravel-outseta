@@ -20,6 +20,7 @@ class SignupCallbackController extends BaseWebhookController
             'is_demo' => data_get($data, 'IsDemo'),
             'current_subscription' => data_get($data, 'CurrentSubscription'),
             'subscriptions' => data_get($data, 'Subscriptions'),
+            'person_account' => data_get($data, 'PersonAccount'),
         ]);
 
         $data['ClientIdentifier'] = $account->id;
