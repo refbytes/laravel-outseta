@@ -42,7 +42,7 @@ trait HasAccount
     {
         return in_array(
             str($this->email)->lower(),
-            collect($this->account->person_account)
+            collect(json_decode($this->account->person_account, true))
                 ->where('IsPrimary', true)
                 ->pluck('Person.Email')
                 ->map(fn ($email) => str($email)->lower())
