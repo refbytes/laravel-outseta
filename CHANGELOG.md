@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v1.3.0 - 2025-08-27
+
+Added PersonAccount information to accounts table in person_account column.
+
+Added new isPrimary() method to User trait.
+
 ## v1.2.0 - 2025-08-23
 
 Sessions Checking Updates
