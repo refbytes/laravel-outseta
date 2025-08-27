@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v1.3.2 - 2025-08-27
+
+Fixed bug where person_account needs json_decoded
+
 ## v1.3.1 - 2025-08-27
 
 Added previously created migration to Service Provider to allow for publishing
