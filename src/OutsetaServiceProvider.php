@@ -25,7 +25,10 @@ class OutsetaServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasViewComponent('outseta', QuickStartScript::class)
             ->hasRoutes(['auth', 'web', 'webhooks'])
-            ->hasMigration('create_accounts_table')
+            ->hasMigrations([
+                'create_accounts_table',
+                'add_person_account_to_accounts_table',
+            ])
             ->hasCommands([
                 OutsetaPlanFamiliesCommand::class,
                 OutsetaPlansCommand::class,
