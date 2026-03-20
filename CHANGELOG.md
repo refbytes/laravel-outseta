@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v1.3.4 - 2026-03-20
+
+* Added Laravel 13 support
+
 ## v1.3.3 - 2026-03-20
 
 * Updated firebase/php-jwt requirement from ^6.10 to ^7.0
