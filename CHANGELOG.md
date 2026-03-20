@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-outseta` will be documented in this file.
 
+## v1.3.3 - 2026-03-20
+
+* Updated firebase/php-jwt requirement from ^6.10 to ^7.0
+
 ## v1.3.2 - 2025-08-27
 
 Fixed bug where person_account needs json_decoded
